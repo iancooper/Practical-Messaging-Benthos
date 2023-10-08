@@ -1,2 +1,2 @@
 # Practical-Messaging-Benthos
-Excecises demonstrating using Benthos for ECST
+Exercises demonstrating using Benthos for ECST
