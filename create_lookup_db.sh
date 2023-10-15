@@ -2,7 +2,7 @@
 
 # MySQL container details
 # TODO: you need to paste the container id for mysql here
-MYSQL_CONTAINER_NAME="5bb6f374e354"
+MYSQL_CONTAINER_NAME="3b88364aeea0"
 
 # MySQL server connection details
 MYSQL_USER="root"
