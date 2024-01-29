@@ -6,8 +6,8 @@ input:
   label: ""
   kafka:
     addresses: [localhost:9092]
-    topics: [biography]
-    consumer_group: "bio enrichment lookup"
+    topics: [Pub-Sub-Stream-Model.Biography]
+    consumer_group: "bio lookup"
     client_id: benthos
     start_from_oldest: true
     checkpoint_limit: 1024
@@ -28,13 +28,13 @@ output:
     driver: "mysql" # No default (required)
     dsn: root:root@tcp(localhost:3306)/Lookup # No default (required)
     table: Biography # No default (required)
-    columns: [name, biography] # No default (required)
+    columns: [Id, Description] # No default (required)
     args_mapping: root = [meta("kafka_key"), content() ] # No default (required) (hard to understand, use content() for full body)
     max_in_flight: 64
     init_statement: | # No default (optional)
       create table if not exists Lookup.Biography(
-        Name varchar(255) not null primary key,
-        Biography text null
+        Id VARCHAR(255) primary key,
+        Description TEXT 
       );
 
 logger:
