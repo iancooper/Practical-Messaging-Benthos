@@ -4,7 +4,7 @@
 kafka_container="ae10b4397399"
 
 # Topic name
-topic_name="biography"
+topic_name="Pub-Sub-Stream-Biography"
 
 # Execute the Kafka topics command inside the container
 docker exec -it ${kafka_container} /bin/kafka-topics \
